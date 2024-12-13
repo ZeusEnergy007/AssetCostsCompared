@@ -1,20 +1,78 @@
 # AssetCostsCompared
-Project Overview:  This project will examine the median cost of a U.S. home, comparing prices in U.S. Dollars to Bitcoin (BTC) over a ten-year period from 2014 to 2024. In a natural free-market state, prices tend to decline to their nominal cost of production, creating a deflationary trend. However, using an inflation-prone "fiat" currency like the U.S. Dollar can distort this dynamic. In contrast, Bitcoin, with its fixed supply, offers a stable alternative for measuring value. This analysis will present graphs that illustrate the inflated cost of a home in U.S. Dollars alongside the deflating cost of the same home measured in Bitcoin. (A comparison with gold may also be included.)
 
-Technical Insight:  To gather data, I will use APIs and/or available datasets from sources like Zillow, Realtor.com, the U.S. Census Bureau, and CoinMarketCap, with additional sources as needed based on my research findings. I will organize the data in a structured table with rows representing each year from 2014 through 2024. The columns will include:
+## Overview
 
-U.S. median home value (in dollars)
-Median income (in dollars)
-Cost of Living Index
-Bitcoin value (in dollars)
-Home value (in Bitcoin)
-For visualization, I will use Matplotlib or potentially other Python libraries (Seaborn, Plotly?) to produce two main types of graphs:
+**AssetCostsCompared** is a data visualization project that examines the median cost of U.S. homes from 2014 to 2024, comparing prices measured in U.S. Dollars to Bitcoin (BTC). The project highlights the deflationary nature of free-market assets like Bitcoin against the inflationary impact of fiat currencies like the U.S. Dollar.
 
-Graph 1: Vertical bar clusters representing each year's data from 2014 to 2024. Each cluster will display HomeInDollars, IncomeInDollars, BitcoinInDollars, and HomeInBitcoin on the X-axis, with values on the Y-axis ranging from 0 to 500,000. This will visually contrast the nominal dollar value of a home with equivalent values in Bitcoin and income.
+The analysis is presented through three interactive graphs hosted on a dashboard:
+1. **Bar Graph** - Compares median home value, median income, and Bitcoin value across the years.
+2. **Line Graph** - Displays trends for home prices, income, Bitcoin value, and home price in Bitcoin over time.
+3. **Time-lapse Graph** - Animates the trends year by year for an engaging visualization.
 
-Graph 2: A line plot that tracks each of the four metrics—HomeInDollars, IncomeInDollars, BitcoinInDollars, and HomeInBitcoin—over time, with years from 2014 to 2024 on the X-axis and values (initially set from 0 to 500,000) on the Y-axis. Each line will provide a comparative view of the value trends.
+---
 
-Note: The initial Y-axis scale of 0 to 500,000 may be recalibrated as data is collected to best represent the trends.  I also expect to calculate/convert dollar values to Bitcoin before presentation.
+## Visualizations
 
-Optional Visual Aids:  I've include a few images as I am attempting to work out how resprent graphs.  These are
-NOT representative of my final product at this point.
+Below are examples of the graphs you will see when running the project:
+
+### Bar Graph
+![Bar Graph](BarGraph.png)
+
+### Line Graph
+![Line Graph](LineGraph.png)
+
+### Time-lapse Graph
+![Time-lapse Graph](Time-lapseGraph.png)
+
+---
+
+## Background
+
+Initially, the project relied on live API data from sources such as Zillow, the U.S. Census Bureau, and CoinMarketCap. However, this approach proved unreliable due to fluctuating API responses and limitations. To address this, all fetched data was committed to a local CSV file, `asset_costs_df.csv`, ensuring consistency and repeatability.
+
+The project also evolved from a simple sequential display of graphs using Matplotlib to a fully interactive **Dash dashboard**. This change was driven by user experience considerations, as requiring users to close each graph manually proved cumbersome. The dashboard provides a seamless and engaging way to explore the data.
+
+---
+
+## Instructions
+
+Follow these steps to set up and run the project:
+
+### 1. Prerequisites
+Ensure you have the following installed on your system:
+- Python 3.7 or later
+- Pip (Python package manager)
+
+### 2. Clone the Repository
+Clone the project repository to your local machine:
+```bash
+git clone <repository-url>
+cd AssetCostsCompared
+
+### 3. Set Up the Environment
+Create and activate a virtual environment:
+
+In bash or terminal:
+
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install the required packages:
+pip install -r requirements.txt
+
+### 4. Run the Application
+Run the Python script to launch the dashboard:
+
+In bash or Terminal:
+
+python AssetCostsCompared.py
+
+
+### 5. Access the Dashboard
+The dashboard will automatically open in your default web browser. You can also manually access it at http://127.0.0.1:8050.
+
+### Notes
+The project uses asset_costs_df.csv as its data source. Make sure this file exists in the project directory.
+For any issues or questions, feel free to create an issue on the repository or reach out directly.
+
+Enjoy exploring the data with AssetCostsCompared!
